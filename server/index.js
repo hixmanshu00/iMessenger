@@ -12,6 +12,7 @@ require("dotenv").config()
 app.use(cors());
 app.use(express.json())
 
+app.use(express.static('build'))
 app.use('/api/auth', userRoutes)
 app.use('/api/messages', messageRoute)
 
