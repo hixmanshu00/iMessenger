@@ -125,16 +125,23 @@ const FormContainer = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
   align-items: center;
   background-color: #131324;
+
   .brand {
     display: flex;
     align-items: center;
     gap: 1rem;
     justify-content: center;
+    @media only screen and (max-width: 767px) {
+      h1 {
+        font-size: 1.4rem;
+      }
+      img {
+        height: 4rem;
+      }
+    }
     img {
       height: 5rem;
     }
@@ -153,8 +160,14 @@ const FormContainer = styled.div`
     padding: 3rem 5rem;
     @media only screen and (max-width: 767px) {
       padding: 3.5rem 0.8rem;
-      width: 100vw;
-    }
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 85vw;
+      button {
+        width: 80%;
+      }
+  }
     input {
       background-color: transparent;
       padding: 1rem;
@@ -167,6 +180,9 @@ const FormContainer = styled.div`
         border: 0.1rem solid #997af0;
         outline: none;
       }
+    @media only screen and (max-width: 767px) {
+      width: 80%;
+    }
     }
     button {
       background-color: #997af0;

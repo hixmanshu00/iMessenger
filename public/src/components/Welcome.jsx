@@ -32,7 +32,7 @@ span {
 }
 .menu {
   position: absolute;
-  top: 2rem;
+  top: 4rem;
   right: 2rem;
 }
 @media only screen and (max-width: 767px) {
@@ -42,6 +42,11 @@ span {
     color: gray;
   }
 
+}
+@media only screen and (min-width: 767px) {
+  .menu{
+    display: none;
+  }
 }
 `
 

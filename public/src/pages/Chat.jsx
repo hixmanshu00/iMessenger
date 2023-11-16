@@ -61,6 +61,7 @@ const Chat = () => {
           currentUser={currentUser}
           changeChat={handleChatChange}
           isMenuOpen={isMenuOpen}
+          toggleMenu={toggleMenu}
         />
       {/* </div> */}
 

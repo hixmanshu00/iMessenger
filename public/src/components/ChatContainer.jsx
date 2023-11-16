@@ -131,6 +131,7 @@ const Container = styled.div`
       display: none;
     }
     @media only screen and (max-width: 767px) {
+      margin-top: 2rem;
       .logout {
         visibility: hidden;
       }
@@ -187,6 +188,7 @@ const Container = styled.div`
         color: #d1d1d1;
       }
       @media only screen and (max-width: 767px) {
+        margin-top: 1rem;
         .content {
           max-width: 60%;
         }

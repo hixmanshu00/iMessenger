@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
-const Contacts = ({ contacts, currentUser, changeChat, isMenuOpen }) => {
+import Logout from "./Logout";
+const Contacts = ({ contacts, currentUser, changeChat, isMenuOpen, toggleMenu }) => {
   const [currentUserName, setCurrentUserName] = useState(undefined);
   const [currentUserImage, setCurrentUserImage] = useState(undefined);
   const [currentSelected, setCurrentSelected] = useState(undefined);
@@ -14,6 +15,7 @@ const Contacts = ({ contacts, currentUser, changeChat, isMenuOpen }) => {
   const changeCurrentChat = (index, contact) => {
     setCurrentSelected(index);
     changeChat(contact);
+    toggleMenu()
   };
   return (
     <>
@@ -53,9 +55,12 @@ const Contacts = ({ contacts, currentUser, changeChat, isMenuOpen }) => {
                 alt="avatar"
               />
             </div>
-          </div>
           <div className="username">
             <h2>{currentUserName}</h2>
+          </div>
+          <div className="logout-mobile">
+            <Logout />
+          </div>
           </div>
         </Container>
       )}
@@ -69,11 +74,21 @@ const Container = styled.div`
   overflow: hidden;
   background-color: #080420;
   @media only screen and (max-width: 767px) {
+    grid-template-rows: 10% 67% 23%;
     position: absolute;
     top: 1rem;
     height: 98vh;
     width: ${({ isOpen }) => (isOpen ? "70vw" : "0")};
     transition: width 0.3s ease-in-out;
+    .brand {
+      margin-top: 2rem;
+    }
+    .contacts {
+      margin-top: 2rem;
+    }
+    .current-user {
+      margin-bottom: 3rem;
+    }
   }
 
   .brand {
@@ -88,6 +103,7 @@ const Container = styled.div`
       color: white;
       text-transform: uppercase;
     }
+
   }
   .contacts {
     display: flex;
@@ -135,7 +151,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     .avatar {
       img {
         height: 4rem;
@@ -145,6 +161,14 @@ const Container = styled.div`
     .username {
       h2 {
         color: white;
+      }
+    }
+    .logout-mobile {
+      display: none;
+    }
+    @media screen and (max-width: 767px) {
+      .logout-mobile {
+        display: block;
       }
     }
     @media screen and (min-width: 720px) and (max-width: 1080px) {
@@ -157,10 +181,7 @@ const Container = styled.div`
     }
   }
 
-  /* @media only screen and (max-width: 767px) {
-        visibility: hidden;
-        display: none;
-    } */
+
 `;
 
 export default Contacts;
