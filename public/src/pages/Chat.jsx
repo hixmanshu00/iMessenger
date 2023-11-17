@@ -55,7 +55,6 @@ const Chat = () => {
   return (
     <Container>
       <div className="container">
-      {/* <div className="contacts"> */}
         <Contacts
           contacts={contacts}
           currentUser={currentUser}
@@ -63,7 +62,6 @@ const Chat = () => {
           isMenuOpen={isMenuOpen}
           toggleMenu={toggleMenu}
         />
-      {/* </div> */}
 
         {isLoaded && currentChat === undefined ? (
           <Welcome currentUser={currentUser} toggleMenu={toggleMenu} className="welcome" />
@@ -103,8 +101,12 @@ const Container = styled.div`
     }
     @media only screen and (max-width: 767px) {
       display: flex;
+      padding-top: 3rem;
+      /* justify-content: center; */
+      /* align-items: center; */
       height: 100vh;
       width: 100vw;
+      max-width: 100vw;
     }
 
   }

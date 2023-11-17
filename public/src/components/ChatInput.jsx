@@ -59,7 +59,8 @@ const Container = styled.div`
   }
   @media only screen and (max-width: 767px) {
     padding: 0 0.7rem;
-    margin-bottom: 5rem;
+    max-width: 98vw;
+    /* margin-bottom: 5rem; */
     .button-container {
       display: none;
       visibility: hidden;

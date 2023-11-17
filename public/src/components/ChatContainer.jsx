@@ -119,6 +119,9 @@ const Container = styled.div`
   grid-template-rows: 10% 78% 12%;
   gap: 0.1rem;
   overflow: hidden;
+  @media only screen and (max-width: 767px) {
+    width: 100vw;
+  }
   @media screen and (min-width: 720px) and (max-width: 1080px) {
     grid-template-rows: 15% 70% 15%;
   }
@@ -131,7 +134,7 @@ const Container = styled.div`
       display: none;
     }
     @media only screen and (max-width: 767px) {
-      margin-top: 2rem;
+      /* margin-top: 2rem; */
       .logout {
         visibility: hidden;
       }
@@ -188,7 +191,7 @@ const Container = styled.div`
         color: #d1d1d1;
       }
       @media only screen and (max-width: 767px) {
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
         .content {
           max-width: 60%;
         }

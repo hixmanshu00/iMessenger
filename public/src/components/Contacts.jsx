@@ -74,12 +74,13 @@ const Container = styled.div`
   overflow: hidden;
   background-color: #080420;
   @media only screen and (max-width: 767px) {
-    grid-template-rows: 10% 67% 23%;
+    grid-template-rows: 10% 75% 15%;
     position: absolute;
-    top: 1rem;
-    height: 98vh;
-    width: ${({ isOpen }) => (isOpen ? "70vw" : "0")};
+    top: 2rem;
+    height: 100vh;
+    width: ${({ isOpen }) => (isOpen ? "75vw" : "0")};
     transition: width 0.3s ease-in-out;
+    max-height: 98vh;
     .brand {
       margin-top: 2rem;
     }
@@ -87,7 +88,7 @@ const Container = styled.div`
       margin-top: 2rem;
     }
     .current-user {
-      margin-bottom: 3rem;
+      /* margin-bottom: 3rem; */
     }
   }
 
